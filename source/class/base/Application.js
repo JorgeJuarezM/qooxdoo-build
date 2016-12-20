@@ -49,13 +49,14 @@ qx.Class.define("base.Application",
                 // Call super class
                 this.base(arguments);
                 qx.registry.registerApp(this);
+            },
 
-                var includes = [
-                    qx.ui.basic.Label,
-                    qx.ui.form.Button,
-                    qx.ui.window.Window
-                ]
-
-            }
+            libs: [
+                qx.ui.basic.Label,
+                qx.ui.form.Button,
+                qx.ui.layout.Basic,
+                qx.ui.layout.Dock,
+                qx.ui.window.Window
+            ]
         }
     });

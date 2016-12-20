@@ -5,7 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <title>base</title>
     <script type="text/javascript" src="script/base.js"></script>
-    <script type="text/javascript" src="script/app.js"></script>
+    <script type="text/javascript">
+        function Main(app) {
+            app.getRoot()._setLayout(new qx.ui.layout.Basic());
+
+            var btn = new qx.ui.form.Button("Test");
+            app.getRoot().add(btn, {top: 100, left: 100});
+            btn.addListener("execute", btn_execute);
+        }
+
+        function btn_execute() {
+            alert("test");
+        }
+
+        qx.registry.registerMainMethod(Main);
+    </script>
 </head>
 <body></body>
 </html>
